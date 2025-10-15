@@ -27,7 +27,7 @@ function convertToObject(sourceString) {
       continue;
     }
 
-    const prop = decl.slice(0, colonIndex).replace(/\s+/g, '').trim();
+    const prop = decl.slice(0, colonIndex).trim();
     const value = decl.slice(colonIndex + 1).trim();
 
     if (!prop) {
