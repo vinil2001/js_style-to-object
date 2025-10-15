@@ -6,10 +6,10 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const result = {};
+  const stylesObject = {};
 
   if (!sourceString) {
-    return result;
+    return stylesObject;
   }
 
   const parts = String(sourceString).split(';');
@@ -33,10 +33,10 @@ function convertToObject(sourceString) {
     if (!prop) {
       return;
     }
-    result[prop] = value;
+    stylesObject[prop] = value;
   });
 
-  return result;
+  return stylesObject;
 }
 
 module.exports = convertToObject;
