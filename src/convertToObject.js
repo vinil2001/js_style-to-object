@@ -14,27 +14,27 @@ function convertToObject(sourceString) {
 
   const parts = String(sourceString).split(';');
 
-  for (const part of parts) {
+  parts.forEach((part) => {
     const decl = part.trim();
 
     if (!decl) {
-      continue;
+      return;
     }
 
     const colonIndex = decl.indexOf(':');
 
     if (colonIndex === -1) {
-      continue;
+      return;
     }
 
     const prop = decl.slice(0, colonIndex).trim();
     const value = decl.slice(colonIndex + 1).trim();
 
     if (!prop) {
-      continue;
+      return;
     }
     result[prop] = value;
-  }
+  });
 
   return result;
 }
